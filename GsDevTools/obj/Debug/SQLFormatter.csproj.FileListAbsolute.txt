@@ -1,0 +1,17 @@
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\bin\Debug\SQLFormatter.exe.config
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\bin\Debug\SQLFormatter.exe
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\bin\Debug\SQLFormatter.pdb
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\bin\Debug\Newtonsoft.Json.xml
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\obj\Debug\SQLFormatter.frmPrincipal.resources
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\obj\Debug\SQLFormatter.Properties.Resources.resources
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\obj\Debug\SQLFormatter.ucBorders.resources
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\obj\Debug\SQLFormatter.csproj.GenerateResource.cache
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\obj\Debug\SQLFormatter.csproj.CoreCompileInputs.cache
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\obj\Debug\SQLFormatter.csproj.CopyComplete
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\obj\Debug\SQLFormatter.exe
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\obj\Debug\SQLFormatter.pdb
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\obj\Debug\SQLFormatter.csprojAssemblyReference.cache
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\bin\Debug\VerbalExpressions.dll
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\SQLFormatter\SQLFormatter\bin\Debug\VerbalExpressions.pdb
