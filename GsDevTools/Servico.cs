@@ -45,19 +45,96 @@ namespace GsDevTools
             return result;
         }
 
+        private void TrateDateTime(IList<Variavel> variaveis)
+        {
+            foreach (var variavelDt in variaveis.Where(x => x.DbType.Contains("datetime")))
+            {
+                variavelDt.Valor = $"CONVERT(DATETIME2, '{variavelDt.Valor}')";
+            }
+        }
+
         private string FormateHibernate(string texto)
         {
-            var splitted = texto.Split(new string[] { "N'" }, StringSplitOptions.None);
+            var splitted = texto.Split(new[] { ",N'" }, StringSplitOptions.None);
 
-            var setDasVariaveis = RemovaEspacosBrancos(ObtenhaSetVariaveis(texto.Substring(texto.LastIndexOf("@p0"))));
+            var preSelect = RemovaEspacosBrancos(Trate(splitted.First()));
+            var select = preSelect.Remove(preSelect.LastIndexOf("'", StringComparison.Ordinal)).Replace("exec sp_executesql", string.Empty);
 
-            var declare = RemovaEspacosBrancos(Trate(splitted.Last()));
-            var select = RemovaEspacosBrancos(Trate(splitted[1]));
-            var textoParaFormatar = $"DECLARE {declare.Remove(declare.LastIndexOf("@p0"))}\n" +
-                                    $"{setDasVariaveis}\n" +
-                                    $"{select.Replace("''", "'")}";
+            var variaveis = ObtenhaVariaveis(texto);
+
+            TrateDateTime(variaveis);
+
+            foreach (var item in variaveis)
+            {
+                select = select.Replace(item.Nome, item.Valor);
+            }
+
+            var textoParaFormatar = $"{select.Replace("''", "'")}".Trim();
 
             return textoParaFormatar;
+        }
+
+        public class Variavel
+        {
+            public string DbType { get; set; }
+
+            public string Nome { get; set; }
+
+            public string Valor { get; set; }
+        }
+
+        private Dictionary<string, string> ObtenhaDbTypesVariaveis(string texto)
+        {
+            var splitted = texto.Split(',');
+
+            var retorno = new Dictionary<string, string>();
+            foreach (var item in splitted)
+            {
+                if (item == splitted.Last())
+                    continue;
+                retorno.Add(item.Split(' ').First().Trim(), item.Split(' ').Last().Trim());
+            }
+
+            return retorno;
+        }
+
+        public static string[] SplitAt(string source, params int[] index)
+        {
+            index = index.Distinct().OrderBy(x => x).ToArray();
+            string[] output = new string[index.Length + 1];
+            int pos = 0;
+
+            for (int i = 0; i < index.Length; pos = index[i++])
+                output[i] = source.Substring(pos, index[i] - pos);
+
+            output[index.Length] = source.Substring(pos);
+            return output;
+        }
+
+        private IList<Variavel> ObtenhaVariaveis(string texto)
+        {
+            var text = texto.Split(new[] { ",N'" }, StringSplitOptions.None).Last();
+            var indicePraSplit = text.LastIndexOf("@p0", StringComparison.Ordinal);
+            text = SplitAt(text, indicePraSplit).First();
+            var dbTypesVariaveis = ObtenhaDbTypesVariaveis(text);
+
+            var setDasVariaveis = RemovaEspacosBrancos(ObtenhaSetVariaveis(texto.Substring(texto.LastIndexOf("@p0", StringComparison.Ordinal))));
+            var lista = setDasVariaveis.Split(new[] { "SET" }, StringSplitOptions.None).ToList();
+            lista.RemoveAt(0);
+
+            var variaveis = new List<Variavel>();
+            foreach (var item in lista)
+            {
+                var splitt = item.Split('=');
+                variaveis.Add(new Variavel
+                {
+                    Nome = splitt.First().Trim(),
+                    Valor = splitt.Last().Remove(splitt.Last().LastIndexOf('\n')).Trim(),
+                    DbType = dbTypesVariaveis[splitt.First().Trim()]
+                });
+            }
+
+            return variaveis;
         }
 
         private string RemovaEspacosBrancos(string str)
@@ -78,7 +155,7 @@ namespace GsDevTools
             {
                 var casoEspecial = false;
                 var aux = string.Empty;
-                if (item.Where(x => x == "'".ToArray().FirstOrDefault()).Count() == 2)
+                if (item.Count(x => x == "'".ToArray().FirstOrDefault()) == 2)
                 {
                     casoEspecial = true;
                     var valor = Between(item, "'", "'").Trim();

@@ -19,11 +19,8 @@ C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTo
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\GsDevTools.exe
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\GsDevTools.pdb
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\Newtonsoft.Json.dll
-C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\VerbalExpressions.dll
-C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\VisualEffects.dll
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\Newtonsoft.Json.pdb
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\Newtonsoft.Json.xml
-C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\VerbalExpressions.pdb
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.csprojAssemblyReference.cache
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.frmPrincipal.resources
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GSDevTools.Properties.Resources.resources
@@ -33,3 +30,29 @@ C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTo
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.csproj.CopyComplete
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.exe
 C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.pdb
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\MetroFramework.Design.dll
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\MetroFramework.dll
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\MetroFramework.Fonts.dll
+C:\Users\gustavo.moraes\Documents\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GSDevTools.frmClipboardTool.resources
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\GsDevTools.exe.config
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\GsDevTools.exe
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\GsDevTools.pdb
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\MetroFramework.Design.dll
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\MetroFramework.dll
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\MetroFramework.Fonts.dll
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\Newtonsoft.Json.dll
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\Newtonsoft.Json.pdb
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\Newtonsoft.Json.xml
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.csprojAssemblyReference.cache
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GSDevTools.frmClipboardTool.resources
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.frmPrincipal.resources
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GSDevTools.Properties.Resources.resources
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.ucBorders.resources
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.csproj.GenerateResource.cache
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.csproj.CoreCompileInputs.cache
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.csproj.CopyComplete
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.exe
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GsDevTools.pdb
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\SharpClipboard.dll
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\bin\Release\SharpClipboard.xml
+D:\Backup Maquina Gustavo\Visual Studio 2017\Projects\GsDevTools\GsDevTools\obj\Release\GSDevTools.ucItem.resources

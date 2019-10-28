@@ -54,15 +54,9 @@ namespace GSDevTools
         private Dictionary<string, string> ObtenhaVersionamento(string texto)
         {
             var linhas = texto.Split('\n');
-            var versionamentos = new Dictionary<string, string>();
 
-            foreach(var linha in linhas)
-            {
-                var splitted = linha.Split('|');
-                versionamentos.Add(splitted[0].Trim(), splitted[1].Trim());
-            }
-
-            return versionamentos;
+            return linhas.Select(linha => linha.Split('|'))
+                         .ToDictionary(splitted => splitted[0].Trim(), splitted => splitted[1].Trim());
         }
 
         public async Task<bool> VerifiqueConexao()
@@ -93,7 +87,13 @@ namespace GSDevTools
         {
             var diretorioRaiz = AppDomain.CurrentDomain.BaseDirectory;
             var diretorioVersoes = diretorioRaiz + @"\Versoes";
+            var diretorioBackup = diretorioRaiz + @"\Backup";
             var arquivoUltimaVersao = diretorioVersoes + $@"\{UltimaVersao.Key}.zip";
+
+            if (Directory.Exists(diretorioBackup))
+            {
+                Directory.Delete(diretorioBackup);
+            }
 
             if (!Directory.Exists(diretorioVersoes))
             {
@@ -108,6 +108,9 @@ namespace GSDevTools
             await BaixeArquivo(UltimaVersao.Value, arquivoUltimaVersao);
 
             ExecuteAppUpdater(diretorioRaiz, arquivoUltimaVersao);
+
+            Directory.GetFiles(diretorioBackup).ToList().ForEach(File.Delete);
+            Directory.Delete(diretorioBackup);
         }
 
         private void ExecuteAppUpdater(string diretorioRaiz, string arquivoAtualizacao)

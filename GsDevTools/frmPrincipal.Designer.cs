@@ -33,11 +33,13 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.formatarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.encontrarArquivoErroNG = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirClipboardTool = new System.Windows.Forms.ToolStripMenuItem();
             this.sair = new System.Windows.Forms.ToolStripMenuItem();
             this.lblVar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ucBorders1 = new GsDevTools.ucBorders();
+            this.abrirGlobalizacao = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,29 +53,38 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.formatarToolStripMenuItem,
+            this.encontrarArquivoErroNG,
             this.abrirClipboardTool,
+            this.abrirGlobalizacao,
             this.sair});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(169, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(229, 136);
             // 
             // formatarToolStripMenuItem
             // 
             this.formatarToolStripMenuItem.Name = "formatarToolStripMenuItem";
-            this.formatarToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.formatarToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.formatarToolStripMenuItem.Text = "Formatar SQL";
             this.formatarToolStripMenuItem.Click += new System.EventHandler(this.formatarToolStripMenuItem_Click);
+            // 
+            // encontrarArquivoErroNG
+            // 
+            this.encontrarArquivoErroNG.Name = "encontrarArquivoErroNG";
+            this.encontrarArquivoErroNG.Size = new System.Drawing.Size(228, 22);
+            this.encontrarArquivoErroNG.Text = "Encontrar arquivo de erro NG";
+            this.encontrarArquivoErroNG.Click += new System.EventHandler(this.EncontrarArquivoErroNG_Click);
             // 
             // abrirClipboardTool
             // 
             this.abrirClipboardTool.Name = "abrirClipboardTool";
-            this.abrirClipboardTool.Size = new System.Drawing.Size(168, 22);
+            this.abrirClipboardTool.Size = new System.Drawing.Size(228, 22);
             this.abrirClipboardTool.Text = "Abrir Clipboard Tool";
             this.abrirClipboardTool.Click += new System.EventHandler(this.abrirClipboardTool_Click);
             // 
             // sair
             // 
             this.sair.Name = "sair";
-            this.sair.Size = new System.Drawing.Size(168, 22);
+            this.sair.Size = new System.Drawing.Size(228, 22);
             this.sair.Text = "Sair";
             this.sair.Click += new System.EventHandler(this.sair_Click);
             // 
@@ -96,7 +107,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(1, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 45);
+            this.label1.Size = new System.Drawing.Size(148, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "DevTools";
             // 
@@ -107,6 +118,13 @@
             this.ucBorders1.Name = "ucBorders1";
             this.ucBorders1.Size = new System.Drawing.Size(831, 30);
             this.ucBorders1.TabIndex = 0;
+            // 
+            // abrirGlobalizacao
+            // 
+            this.abrirGlobalizacao.Name = "abrirGlobalizacao";
+            this.abrirGlobalizacao.Size = new System.Drawing.Size(228, 22);
+            this.abrirGlobalizacao.Text = "Abrir Globalização";
+            this.abrirGlobalizacao.Click += new System.EventHandler(this.AbrirGlobalizacao_Click);
             // 
             // frmPrincipal
             // 
@@ -139,6 +157,8 @@
         private System.Windows.Forms.ToolStripMenuItem abrirClipboardTool;
         private System.Windows.Forms.Label lblVar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem encontrarArquivoErroNG;
+        private System.Windows.Forms.ToolStripMenuItem abrirGlobalizacao;
     }
 }
 
