@@ -16,7 +16,7 @@ namespace GSDevTools
 
         #endregion
 
-        public static string Versao => "1.9";
+        public static string Versao => "2.1";
         public static string ConexaoUrl => @"https://1drv.ms/t/s!AgTuMixP3feMrmQKIzFvHubSiYuE";
 
         public static int ConexaoTimeout => 5000;

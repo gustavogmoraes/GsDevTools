@@ -80,10 +80,13 @@ namespace GSDevTools
             var locationToBe = new Point(larguraTela - larguraForm, alturaTela - alturaForm);
             AnimateIn(locationToBe);
 
+            button1.Select();
+            var cfg = Persistencia.ObtenhaConfiguracao();
+
             Task.Run(() =>
             {
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                FadeOutIn(TimeSpan.FromSeconds(3));
+                Thread.Sleep(cfg.PopUpShowTime);
+                FadeOutIn(cfg.PopUpFadeOutTime);
             });
         }
 

@@ -35,11 +35,13 @@
             this.formatarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encontrarArquivoErroNG = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirClipboardTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirGlobalizacao = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirDataInsertHelper = new System.Windows.Forms.ToolStripMenuItem();
             this.sair = new System.Windows.Forms.ToolStripMenuItem();
             this.lblVar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ucBorders1 = new GsDevTools.ucBorders();
-            this.abrirGlobalizacao = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitly = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,12 +55,14 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.formatarToolStripMenuItem,
+            this.bitly,
             this.encontrarArquivoErroNG,
             this.abrirClipboardTool,
             this.abrirGlobalizacao,
+            this.abrirDataInsertHelper,
             this.sair});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(229, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(229, 180);
             // 
             // formatarToolStripMenuItem
             // 
@@ -80,6 +84,20 @@
             this.abrirClipboardTool.Size = new System.Drawing.Size(228, 22);
             this.abrirClipboardTool.Text = "Abrir Clipboard Tool";
             this.abrirClipboardTool.Click += new System.EventHandler(this.abrirClipboardTool_Click);
+            // 
+            // abrirGlobalizacao
+            // 
+            this.abrirGlobalizacao.Name = "abrirGlobalizacao";
+            this.abrirGlobalizacao.Size = new System.Drawing.Size(228, 22);
+            this.abrirGlobalizacao.Text = "Abrir Globalização";
+            this.abrirGlobalizacao.Click += new System.EventHandler(this.AbrirGlobalizacao_Click);
+            // 
+            // abrirDataInsertHelper
+            // 
+            this.abrirDataInsertHelper.Name = "abrirDataInsertHelper";
+            this.abrirDataInsertHelper.Size = new System.Drawing.Size(228, 22);
+            this.abrirDataInsertHelper.Text = "Abrir Data Insert Helper";
+            this.abrirDataInsertHelper.Click += new System.EventHandler(this.AbrirDataInsertHelper_Click);
             // 
             // sair
             // 
@@ -119,12 +137,12 @@
             this.ucBorders1.Size = new System.Drawing.Size(831, 30);
             this.ucBorders1.TabIndex = 0;
             // 
-            // abrirGlobalizacao
+            // bitly
             // 
-            this.abrirGlobalizacao.Name = "abrirGlobalizacao";
-            this.abrirGlobalizacao.Size = new System.Drawing.Size(228, 22);
-            this.abrirGlobalizacao.Text = "Abrir Globalização";
-            this.abrirGlobalizacao.Click += new System.EventHandler(this.AbrirGlobalizacao_Click);
+            this.bitly.Name = "bitly";
+            this.bitly.Size = new System.Drawing.Size(228, 22);
+            this.bitly.Text = "bit.ly";
+            this.bitly.Click += new System.EventHandler(this.Bitly_Click);
             // 
             // frmPrincipal
             // 
@@ -159,6 +177,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem encontrarArquivoErroNG;
         private System.Windows.Forms.ToolStripMenuItem abrirGlobalizacao;
+        private System.Windows.Forms.ToolStripMenuItem abrirDataInsertHelper;
+        private System.Windows.Forms.ToolStripMenuItem bitly;
     }
 }
 

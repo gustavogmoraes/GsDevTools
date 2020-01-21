@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WK.Libraries.SharpClipboardNS;
+using Clipboard = System.Windows.Clipboard;
 
 namespace GSDevTools
 {
@@ -71,6 +72,8 @@ namespace GSDevTools
                 Persistencia.ObtenhaConfiguracao().GlobalizacaoHabilitada)
             {
                 ServicoGlobalizacao.TryExposeGlobalization(ClipBoard.ClipboardText);
+
+                ServicoBitLy.TryShortLink(ClipBoard.ClipboardText);
             }
 
             if (!Habilitado)
@@ -89,6 +92,7 @@ namespace GSDevTools
             using (var persistencia = Persistencia.AbraConexao())
             {
                 var item = new ClipboardItem(e.ContentType, ClipBoard);
+
                 persistencia.ObtenhaCollectionClipboardItem().Insert(item);
 
                 Persistencia.ChangedClipboardCollection(item);

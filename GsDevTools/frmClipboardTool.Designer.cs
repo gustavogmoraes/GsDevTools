@@ -65,6 +65,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(793, 376);
             this.flowLayoutPanel1.TabIndex = 2;
+            this.flowLayoutPanel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.FlowLayoutPanel1_Scroll);
             // 
             // btnLimparConteudo
             // 
@@ -97,9 +98,9 @@
             this.BackMaxSize = 4000;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(827, 479);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnLimparConteudo);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.metroToggle1);
             this.Controls.Add(this.metroLabel1);
             this.DisplayHeader = false;

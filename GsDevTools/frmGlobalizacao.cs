@@ -26,7 +26,9 @@ namespace GSDevTools
 
             if (cfg.GlobalizacaoHabilitada)
             {
-                cfg.CaminhoLGC = txtCaminhoLGC.Text.Trim();
+                cfg.CaminhoLgc = txtCaminhoLGC.Text.Trim();
+                cfg.PopUpShowTime = TimeSpan.FromSeconds(Convert.ToDouble(txtShowTime.Text));
+                cfg.PopUpFadeOutTime = TimeSpan.FromSeconds(Convert.ToDouble(txtFade.Text));
             }
 
             Persistencia.AltereConfiguracao(cfg);
@@ -39,8 +41,25 @@ namespace GSDevTools
             if (cfg.GlobalizacaoHabilitada)
             {
                 metroToggle1.Checked = true;
-                txtCaminhoLGC.Text = cfg.CaminhoLGC;
+                txtCaminhoLGC.Text = cfg.CaminhoLgc;
+                txtShowTime.Text = cfg.PopUpShowTime.Seconds.ToString();
+                txtFade.Text = cfg.PopUpFadeOutTime.Seconds.ToString();
+
+                if (string.IsNullOrEmpty(txtShowTime.Text) || txtShowTime.Text == "0")
+                {
+                    txtShowTime.Text = "5";
+                }
+
+                if (string.IsNullOrEmpty(txtFade.Text) || txtFade.Text == "0")
+                {
+                    txtShowTime.Text = "3";
+                }
             }
+        }
+
+        private void TxtShowTime_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

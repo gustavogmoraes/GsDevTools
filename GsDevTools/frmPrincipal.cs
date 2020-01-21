@@ -279,5 +279,33 @@ namespace GsDevTools
         {
             new frmPopupGlobalizacao(text).Show();
         }
+
+        private void AbrirDataInsertHelper_Click(object sender, EventArgs e)
+        {
+            new frmDataInsertHelper().Show();
+        }
+
+        public void ShortLink(string text)
+        {
+            Task.Run(() =>
+            {
+                var shortenResult = ServicoBitLy.EncurteUrl(text);
+                if (shortenResult != null)
+                {
+                    Invoke((MethodInvoker)delegate
+                    {
+                        Clipboard.SetText(shortenResult);
+                        notifyIcon1.BalloonTipText = "Url encurtado por DevTools via bit.ly!";
+                        notifyIcon1.ShowBalloonTip(3000);
+                    });
+                }
+            });
+        }
+
+        private void Bitly_Click(object sender, EventArgs e)
+        {
+            var text = Clipboard.GetText();
+            ShortLink(text);
+        }
     }
 }

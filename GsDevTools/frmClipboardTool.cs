@@ -3,11 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VisualEffects;
+using VisualEffects.Animations.Effects;
 
 namespace GSDevTools
 {
@@ -16,6 +21,7 @@ namespace GSDevTools
         public frmClipboardTool()
         {
             InitializeComponent();
+            flowLayoutPanel1.MouseWheel += FlpMouseWheel;
         }
 
         private void MetroToggle1_CheckedChanged(object sender, EventArgs e)
@@ -35,11 +41,15 @@ namespace GSDevTools
 
         public void RefreshList()
         {
-            flowLayoutPanel1.Controls.OfType<Control>().ToList().ForEach(flowLayoutPanel1.Controls.Remove);
+            flowLayoutPanel1.Controls.Clear();
 
             using (var persistencia = Persistencia.AbraConexao())
             {
-                var lista = persistencia.ObtenhaCollectionClipboardItem().FindAll().OrderByDescending(x => x.Horario).ToList();
+                var lista = persistencia.ObtenhaCollectionClipboardItem()
+                    .FindAll()
+                    .Take(50)
+                    .OrderByDescending(x => x.Horario)
+                    .ToList();
 
                 lista.ForEach(item => flowLayoutPanel1.Controls.Add(new ucItem(item)));
             }
@@ -80,6 +90,60 @@ namespace GSDevTools
         {
             Persistencia.FormClipboardTool.Dispose();
             Persistencia.FormClipboardTool = null;
+        }
+
+        private void FlpMouseWheel(object sender, MouseEventArgs e)
+        {
+            HandleScrollDown();
+        }
+
+        private void FlowLayoutPanel1_Scroll(object sender, ScrollEventArgs e)
+        {
+            // Means component is being scrolled down
+            if (e.NewValue - e.OldValue > 0)
+            {
+                HandleScrollDown();
+            }
+        }
+
+        private void HandleScrollDown()
+        {
+            // When controlCount is 50, range is 500
+            // So range must always be controlCount * 10;
+            var controlCount = flowLayoutPanel1.Controls.Count;
+            var range = Convert.ToInt32(controlCount * 7.5);
+            
+            if (IsNear(flowLayoutPanel1.VerticalScroll.Value, flowLayoutPanel1.VerticalScroll.Maximum, range))
+            {
+                DoubleBuffered = true;
+                SuspendLayout();
+                using (var persistencia = Persistencia.AbraConexao())
+                {
+                    var lista = persistencia.ObtenhaCollectionClipboardItem()
+                        .FindAll()
+                        .Skip(controlCount)
+                        .Take(20)
+                        .OrderByDescending(x => x.Horario)
+                        .ToList();
+
+                    lista.ForEach(item =>
+                    {
+                        flowLayoutPanel1.Controls.Add(new ucItem(item));
+                        //Thread.Sleep(2);
+                    });
+                }
+                ResumeLayout();
+            }
+        }
+
+        private string GetScrollDirection(ScrollEventArgs e)
+        {
+            return e.NewValue - e.OldValue > 0 ? "Down" : "Up";
+        }
+
+        private bool IsNear(int valueToCheck, int valueToReach, int range)
+        {
+            return valueToCheck + range >= valueToReach;
         }
     }
 }

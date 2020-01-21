@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WK.Libraries.SharpClipboardNS;
 
 namespace GSDevTools
@@ -34,7 +35,7 @@ namespace GSDevTools
                     Dados = Persistencia.SaveImageAndGetPath(Id, clipboard.ClipboardImage);
                     break;
                 case SharpClipboard.ContentTypes.Files:
-                    Dados = clipboard.ClipboardFiles;
+                    Dados = Clipboard.GetFileDropList();
                     break;
                 case SharpClipboard.ContentTypes.Other:
                     Dados = clipboard.ClipboardObject;

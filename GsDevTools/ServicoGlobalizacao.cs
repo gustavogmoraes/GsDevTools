@@ -16,7 +16,7 @@ namespace GSDevTools
         {
             if (text.Trim().Length > 5 || !text.IsConvertibleToInt32()) return;
 
-            var caminhoLgc = Persistencia.ObtenhaConfiguracao().CaminhoLGC;
+            var caminhoLgc = Persistencia.ObtenhaConfiguracao().CaminhoLgc;
             if (string.IsNullOrEmpty(caminhoLgc))
             {
                 caminhoLgc = @"C:\Program Files (x86)\LG Informatica\LGComponentes";
@@ -38,7 +38,7 @@ namespace GSDevTools
             var code = Convert.ToInt32(text.Trim());
             if (resultDictionary.ContainsKey(code))
             {
-                new frmPopupGlobalizacao(resultDictionary[code]).Show();
+                new frmPopupGlobalizacao(resultDictionary[code].Replace("&quot;", @"""")).Show();
             }
         }
 

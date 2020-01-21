@@ -15,6 +15,10 @@ namespace GSDevTools
 
         public bool GlobalizacaoHabilitada { get; set; }
 
-        public string CaminhoLGC { get; set; }
+        public string CaminhoLgc { get; set; }
+
+        public TimeSpan PopUpShowTime { get; set; }
+
+        public TimeSpan PopUpFadeOutTime { get; set; }
     }
 }

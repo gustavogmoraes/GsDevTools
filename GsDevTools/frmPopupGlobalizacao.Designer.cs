@@ -38,9 +38,9 @@
             // 
             // 
             this.txtText.CustomButton.Image = null;
-            this.txtText.CustomButton.Location = new System.Drawing.Point(497, 2);
+            this.txtText.CustomButton.Location = new System.Drawing.Point(496, 1);
             this.txtText.CustomButton.Name = "";
-            this.txtText.CustomButton.Size = new System.Drawing.Size(59, 59);
+            this.txtText.CustomButton.Size = new System.Drawing.Size(61, 61);
             this.txtText.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtText.CustomButton.TabIndex = 1;
             this.txtText.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -49,7 +49,7 @@
             this.txtText.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtText.Lines = new string[] {
         "Loren ipsumn"};
-            this.txtText.Location = new System.Drawing.Point(11, 11);
+            this.txtText.Location = new System.Drawing.Point(12, 12);
             this.txtText.MaxLength = 32767;
             this.txtText.Multiline = true;
             this.txtText.Name = "txtText";
@@ -60,7 +60,7 @@
             this.txtText.SelectionLength = 0;
             this.txtText.SelectionStart = 0;
             this.txtText.ShortcutsEnabled = true;
-            this.txtText.Size = new System.Drawing.Size(559, 64);
+            this.txtText.Size = new System.Drawing.Size(558, 63);
             this.txtText.TabIndex = 0;
             this.txtText.Text = "Loren ipsumn";
             this.txtText.UseSelectable = true;
@@ -86,6 +86,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtText);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPopupGlobalizacao";

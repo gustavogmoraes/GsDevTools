@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -69,11 +70,11 @@ namespace GSDevTools
                     Clipboard.SetText((string)Item.Dados);
                     break;
                 case SharpClipboard.ContentTypes.Image:
-                    Clipboard.SetImage((Image)Item.Dados);
+                    Clipboard.SetImage(new Bitmap((string)Item.Dados));
                     break;
                 case SharpClipboard.ContentTypes.Files:
                     var collection = new StringCollection();
-                    collection.AddRange(((List<string>)Item.Dados).ToArray());
+                    collection.AddRange(((IList)Item.Dados).Cast<string>().ToArray());
 
                     Clipboard.SetFileDropList(collection);
                     break;
